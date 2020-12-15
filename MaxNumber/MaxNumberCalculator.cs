@@ -1,12 +1,24 @@
-﻿using System;
-
-namespace MaxNumber
+﻿namespace MaxNumber
 {
-	public class MaxNumberCalculator
+    public class MaxNumberCalculator
 	{
-		public int GetMaxNumber(int[] values)
+		public int? GetMaxNumber(int[] values)
 		{
-			throw new NotImplementedException();
+			int? currentMax = null;
+
+			foreach (int element in values)
+            {
+				if(currentMax == null)
+                {
+					currentMax = element;
+                }
+				else if (element > currentMax)
+                {
+					currentMax = element;
+                }
+            }
+
+			return currentMax;
 		}
 	}
 }
